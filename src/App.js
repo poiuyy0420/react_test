@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import {Header} from "./components/Header";
-import {Counter} from "./components/Counter";
 import {Player} from "./components/Player";
+import {AddPlayerForm} from "./components/AddPlayerForm";
 
 
 class App extends React.Component {
@@ -21,6 +20,21 @@ class App extends React.Component {
     this.setState(prevState => ({
       players: prevState.players.filter(player => player.id !== id)
     }))
+  }
+
+  handleAddPlayer = (name) => {
+    this.setState(prevState => {
+      const maxId = prevState.players.reduce((max, player) => {
+        return max > player.id ? max : player.id;
+      }, 0);
+
+      return {
+        players: [
+          ...prevState.players,
+          {id: maxId + 1, name, score: 0}
+        ]
+      }
+    });
   }
 
   handleChangeScore = (index, delta) => {
@@ -41,7 +55,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="scoreboard">
-        <Header title="My scoreboard" totalPlayers={this.state.players.length}/>
+        <Header title="My scoreboard" players={this.state.players}/>
         {
           this.state.players.map((play, index) => <Player
             id={play.id}
@@ -53,6 +67,7 @@ class App extends React.Component {
             index={index}
           />)
         }
+        <AddPlayerForm addPlayer={this.handleAddPlayer} />
       </div>
     )
   }
@@ -62,3 +77,4 @@ class App extends React.Component {
 
 
 export default App;
+
