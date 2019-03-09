@@ -5,6 +5,7 @@ import {Heroes} from "./heroes/Heroes";
 import Scoreboard from "./scoreboard/Scoreboard";
 import {Menu} from "./Menu";
 
+
 export class Root extends React.Component {
 
   render() {

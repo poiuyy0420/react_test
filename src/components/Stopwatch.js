@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import styles from '../pages/scoreboard/Scoreboard.module.css';
 
 export class Stopwatch extends React.Component {
