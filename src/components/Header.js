@@ -3,7 +3,6 @@ import Stats from "./Stats";
 import {Stopwatch} from "./Stopwatch";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import App from "../App";
 import {updateTitle} from "../redux/actions";
 
 export const Header = ({players, title, changeTitle}) => {
@@ -34,10 +33,10 @@ let mpaStateToProps = (state) => {
 }
 
 //action을 dispatch하는 function을 Props로 매핑
-let mapActionToProps = (dispatch) => {
+/*let mapActionToProps = (dispatch) => {
   return{
     changeTitle: () => dispatch(updateTitle('test scoreboard'))
   }
-}
+}*/
 
 export default connect(mpaStateToProps, {updateTitle})(Header);

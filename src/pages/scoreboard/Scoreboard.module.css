@@ -112,6 +112,7 @@ svg {
   font-size: 1.2em;
   border-bottom: solid 2px #EEEEEE;
   letter-spacing: 2px;
+  border-left: solid 2px #EEEEEE;
 }
 
 .player:last-of-type {
@@ -147,7 +148,7 @@ svg {
 
 .stats,
 .stopwatch {
-  width: 170px;
+  width: 190px;
 }
 
 .stats {

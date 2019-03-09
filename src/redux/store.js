@@ -1,6 +1,5 @@
 import {combineReducers, createStore} from "redux";
 import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER, UPDATE_TITLE} from "./actionTypes";
-import {AddPlayerForm} from "../components/AddPlayerForm";
 
 const playerInitialState = {
    title: 'Store Scoreboard',

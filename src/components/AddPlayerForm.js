@@ -6,10 +6,6 @@ class AddPlayerForm extends React.Component {
   // Dom에 접근하기 위한 참조값(실제Dom이 아니라 Dom을 접근하기위한 레퍼런스 값)
   textInput = React.createRef();
 
-  constructor(props){
-    super(props);
-  }
-
   handleValueChange = (e) => {
     this.setState({value: e.target.value});
   }
