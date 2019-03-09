@@ -1,7 +1,7 @@
 import React from 'react';
 import {Counter} from "./Counter";
 
-export class Player extends React.Component{
+export class Player extends React.PureComponent{
   render(){
     console.log(this.props.name, 'rendered');
     const {id, name, score, index, removePlayer, changeScore} = this.props;
@@ -21,10 +21,10 @@ export class Player extends React.Component{
   //   console.log('componentWillReceiveProps', nextProps);
   // }
 
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    console.log('shouldComponentUpdate', nextProps);
-    return nextProps.score !== this.props.score;
-  }
+  // shouldComponentUpdate(nextProps, nextState, nextContext) {
+  //   console.log('shouldComponentUpdate', nextProps);
+  //   return nextProps.score !== this.props.score;
+  // }
 
 
 }
