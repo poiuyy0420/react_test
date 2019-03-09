@@ -1,5 +1,5 @@
 import React from 'react';
-import {Stats} from "./Stats";
+import Stats from "./Stats";
 import {Stopwatch} from "./Stopwatch";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
@@ -40,4 +40,4 @@ let mapActionToProps = (dispatch) => {
   }
 }
 
-export default connect(mpaStateToProps, mapActionToProps)(Header);
+export default connect(mpaStateToProps, {updateTitle})(Header);

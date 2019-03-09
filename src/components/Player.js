@@ -1,18 +1,20 @@
 import React from 'react';
-import {Counter} from "./Counter";
+import Counter from "./Counter";
+import {connect} from "react-redux";
+import {removePlayer} from "../redux/actions";
 
 export class Player extends React.PureComponent{
   render(){
     console.log(this.props.name, 'rendered');
-    const {id, name, score, index, removePlayer, changeScore} = this.props;
+    const {id, name, score, removePlayer} = this.props;
     return (
       <div className="player">
         <span className="player-name">
           <button className="remove-player" onClick={() => removePlayer(id)}>X</button>
         </span>
         <span className="player-name">{name}</span>
-        <Counter {...this.props}/>
         {/*<Counter score={this.props.score} index={this.props.index} changeScore={this.props.changeScore} />*/}
+        <Counter score={score} index={id}/>
       </div>
     );
   }
@@ -26,5 +28,5 @@ export class Player extends React.PureComponent{
   //   return nextProps.score !== this.props.score;
   // }
 
-
 }
+export default connect(null, {removePlayer})(Player);

@@ -1,6 +1,8 @@
 import React from 'react';
+import {connect} from "react-redux";
+import {addPlayer} from "../redux/actions";
 
-export class AddPlayerForm extends React.Component {
+class AddPlayerForm extends React.Component {
   // Dom에 접근하기 위한 참조값(실제Dom이 아니라 Dom을 접근하기위한 레퍼런스 값)
   textInput = React.createRef();
 
@@ -31,3 +33,8 @@ export class AddPlayerForm extends React.Component {
     )
   }
 }
+
+
+
+
+export default connect(null, {addPlayer})(AddPlayerForm);
